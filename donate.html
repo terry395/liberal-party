@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Liberal Party of Canada (2010)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .donate-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .donate-option {
+            border: 2px solid #eee;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .donate-option:hover, .donate-option.selected {
+            border-color: var(--liberal-red);
+            color: var(--liberal-red);
+            background: #fffafa;
+        }
+        .donate-option.selected {
+            box-shadow: 0 0 10px rgba(215, 25, 32, 0.2);
+        }
+        .custom-amount {
+            grid-column: span 3;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .benefit-box {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo" onclick="location.href='index.html'">
+                <span>L</span> LIBERALS
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="policies.html">Policies</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                </ul>
+            </nav>
+            <a href="donate.html" class="btn btn-primary active" style="padding: 8px 20px; font-size: 14px;">Donate</a>
+        </div>
+    </header>
+
+    <main>
+        <section style="background: var(--liberal-red); color: white; padding: 40px 0;">
+            <div class="container">
+                <h1>Support the Vision</h1>
+                <p>Your contribution helps us build a stronger Canada. Support Mark Carney and the Liberal team.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="donate-container">
+                <h2 style="color: var(--liberal-red-dark); text-align: center; margin-bottom: 10px;">Select Donation Amount</h2>
+                <p style="text-align: center; color: #666;">Empower the 2011 Campaign today.</p>
+                
+                <div class="donate-grid">
+                    <div class="donate-option" onclick="selectAmount(25)">$25</div>
+                    <div class="donate-option" onclick="selectAmount(50)">$50</div>
+                    <div class="donate-option" onclick="selectAmount(100)">$100</div>
+                    <div class="donate-option" onclick="selectAmount(250)">$250</div>
+                    <div class="donate-option" onclick="selectAmount(500)">$500</div>
+                    <div class="donate-option" onclick="selectAmount(1000)">$1000</div>
+                    <input type="number" class="custom-amount" placeholder="Other Amount ($)" id="custom-amt">
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px;">Personal Information</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="text" placeholder="First Name" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="text" placeholder="Last Name" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="email" placeholder="Email Address" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px; grid-column: span 2;">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; margin-top: 30px; padding: 15px; font-size: 18px;" onclick="simulateDonation()">Process Simulated Donation</button>
+
+                <div class="benefit-box">
+                    <p><strong>Note:</strong> In accordance with Canadian election laws, only Canadian citizens or permanent residents may contribute to a political party. Contributions are eligible for a generous federal tax credit.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="sim-disclaimer">
+                <p><strong>NOTICE:</strong> This website is strictly and solely for <strong>simulation purposes</strong> for <strong>True North Simulation</strong>. It is not affiliated with the actual Liberal Party of Canada. All content is part of a 2010 political simulation.</p>
+                <p style="margin-top: 10px;">&copy; 2010 Liberal Simulation Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectAmount(amt) {
+            document.querySelectorAll('.donate-option').forEach(opt => opt.classList.remove('selected'));
+            event.target.classList.add('selected');
+            document.getElementById('custom-amt').value = '';
+        }
+
+        function simulateDonation() {
+            const selected = document.querySelector('.donate-option.selected');
+            const custom = document.getElementById('custom-amt').value;
+            const finalAmt = selected ? selected.innerText : (custom ? '$' + custom : null);
+
+            if (!finalAmt) {
+                alert('Please select or enter a donation amount.');
+                return;
+            }
+
+            alert(`Thank you for your simulated donation of ${finalAmt}! This has been logged for True North Simulation.`);
+        }
+    </script>
+</body>
+</html>

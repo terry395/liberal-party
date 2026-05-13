@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies | Liberal Party of Canada (2010)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .policy-cat {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border-left: 8px solid var(--liberal-red);
+        }
+        .policy-cat h3 {
+            color: var(--liberal-red-dark);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .policy-list {
+            list-style: none;
+        }
+        .policy-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        .policy-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--liberal-red);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo" onclick="location.href='index.html'">
+                <span>L</span> LIBERALS
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leadership.html">Leadership</a></li>
+                    <li><a href="policies.html" class="active">Policies</a></li>
+                    <li><a href="newsletters.html">Newsletters</a></li>
+                </ul>
+            </nav>
+            <a href="donate.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">Donate</a>
+        </div>
+    </header>
+
+    <main>
+        <section style="background: var(--liberal-red); color: white; padding: 40px 0;">
+            <div class="container">
+                <h1>Our Policies for 2010</h1>
+                <p>Bold ideas for a better Canada. Explore our comprehensive platform for the 2011 election cycle.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="policy-cat">
+                <h3>The Family Pack</h3>
+                <p style="margin-bottom: 20px;">Our flagship policy designed to support the heartbeat of Canada: the middle-class family.</p>
+                <ul class="policy-list">
+                    <li><strong>Family Care Plan:</strong> A $1 billion investment to help families caring for elderly or disabled relatives.</li>
+                    <li><strong>Learning Passport:</strong> Providing every high school student with $4,000 ($6,000 for low-income) for post-secondary education.</li>
+                    <li><strong>Early Learning & Childcare:</strong> Re-establishing a national framework for affordable, high-quality childcare.</li>
+                </ul>
+            </div>
+
+            <div class="policy-cat">
+                <h3>Economic Growth & Fiscal Responsibility</h3>
+                <p style="margin-bottom: 20px;">Leading Canada out of the recession with smart investments and a plan to return to surplus.</p>
+                <ul class="policy-list">
+                    <li><strong>Corporate Tax Reform:</strong> Cancelling further corporate tax cuts to invest in infrastructure and education.</li>
+                    <li><strong>Clean Tech Investment:</strong> Creating a multi-billion dollar fund to support renewable energy and green manufacturing.</li>
+                    <li><strong>Infrastructure Renewal:</strong> A 10-year plan to modernize Canada's transit, roads, and bridges.</li>
+                </ul>
+            </div>
+
+            <div class="policy-cat">
+                <h3>Environment & Climate Change</h3>
+                <p style="margin-bottom: 20px;">Taking real action on climate change while building the economy of the future.</p>
+                <ul class="policy-list">
+                    <li><strong>Cap-and-Trade System:</strong> Implementing a market-based approach to reduce greenhouse gas emissions.</li>
+                    <li><strong>Home Retrofit Program:</strong> Incentives for Canadians to make their homes more energy-efficient.</li>
+                    <li><strong>National Water Strategy:</strong> Protecting our most precious resource from pollution and over-extraction.</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-primary">Download Full Platform (PDF)</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="sim-disclaimer">
+                <p><strong>NOTICE:</strong> This website is strictly and solely for <strong>simulation purposes</strong> for <strong>True North Simulation</strong>. It is not affiliated with the actual Liberal Party of Canada. All content is part of a 2010 political simulation.</p>
+                <p style="margin-top: 10px;">&copy; 2010 Liberal Simulation Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
